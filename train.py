@@ -102,7 +102,7 @@ torch.cuda.manual_seed(seed)
 np.random.seed(seed)
 random.seed(seed)
 
-epochs = 20
+epochs = 100
 batch_size = 64
 learning_rate = 0.01
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -132,6 +132,8 @@ if args.model == 'relearn':
     
     model = ResNet18_baseline(num_classes=10).to(device)
     model.load_state_dict(torch.load(args.unlearned_model_path, map_location=device))
+    
+    plot_name = "Relearn"
     
 
 # Total parameters and trainable parameters.
