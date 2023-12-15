@@ -171,7 +171,7 @@ if __name__ == '__main__':
         logger.info(f"Validation loss: {valid_epoch_loss:.3f}, validation acc: {valid_epoch_acc:.3f}")
         logger.info('-'*50)
         if args.model == 'relearn' and valid_epoch_acc >= original_valid_acc:
-            logger.info(f"Relearn time for {args.model_path} is {epoch}")
+            logger.info(f"Relearn time for {args.unlearned_model_path} is {epoch}")
             break
         
     # Save the loss and accuracy plots.
